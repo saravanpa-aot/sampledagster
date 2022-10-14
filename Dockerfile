@@ -16,9 +16,9 @@ RUN pip install \
 
 # Add repository code
 
-WORKDIR /opt/dagster/
+WORKDIR /opt/dagster/app
 ENV PYTHONPATH=/app
 
-COPY . /opt/dagster
+COPY ./etl_project /opt/dagster/app
 
 # Run dagster gRPC server on port 4000
