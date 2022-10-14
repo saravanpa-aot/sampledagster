@@ -19,7 +19,11 @@ def say_hello_job():
     https://docs.dagster.io/concepts/ops-jobs-graphs/jobs-graphs
     """
     hello()
+    
+@job
+def say_hello_job1():
+    hello()
 
 @repository
 def etl_project():
-    return [say_hello_job]
+    return [say_hello_job, say_hello_job1]
